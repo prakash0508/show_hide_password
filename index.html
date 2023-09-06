@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Show Hide Password</title>
+  </head>
+  <body>
+    <div class="inputbox">
+      <input type="password" required id="password" />
+      <span>Password</span>
+      <div id="toggel">
+        <i class="fa fa-eye" id="show" onclick="showHide()" aria-hidden="true"></i>
+        <i class="fa fa-solid fa-eye-slash" onclick="showHide()" id="hide" style="display: none;"></i>
+      </div>
+    </div>
+
+    <script>
+        let password = document.getElementById("password")
+        let show = document.getElementById("show")
+        let hide = document.getElementById("hide")
+
+        function showHide(){
+            if(password.type == "password"){
+                password.setAttribute('type', 'text')
+                hide.style.display = "block"
+                show.style.display= "none"
+            }else{
+                password.setAttribute('type', 'password')
+                hide.style.display = "none"
+                show.style.display= "block"
+            }
+        }
+
+    </script>
+
+  </body>
 </html>
